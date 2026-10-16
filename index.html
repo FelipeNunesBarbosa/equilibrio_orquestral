@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/equilibrio.css">
+    <link rel="shortcut icon" href="img/conductor.png" type="image/x-icon">
+    <title>Equilíbrio Orquestral | Relatório</title>
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="brand">
+            <div class="brandmark">♫</div>
+            <div>
+                <h1>EQUILÍBRIO ORQUESTRAL</h1>
+                <div class="subtitle">Relatório de distribuição e adequação dos instrumentos</div>
+            </div>
+        </div>
+        <div class="top-actions"><span class="date" id="reportDate"></span><button onclick="window.print()">▣ &nbsp;
+                Imprimir / Salvar PDF</button></div>
+    </header>
+    <main class="wrap">
+        <section class="kpis" id="kpis"></section>
+        <div class="section-title">
+            <div>
+                <h2>Visão geral por naipe</h2>
+                <p>Distribuição dos instrumentos e participação de cada naipe no total atual de músicos.</p>
+            </div>
+        </div>
+        <section class="naipes" id="naipes"></section>
+        <div class="section-title">
+            <div>
+                <h2>Detalhamento dos instrumentos</h2>
+                <p>Pesquise, filtre e consulte os dados de cada instrumento.</p>
+            </div>
+        </div>
+        <section class="controls" aria-label="Filtros">
+            <label class="excel-load" for="excelFile">📊 Carregar Excel</label>
+            <input id="excelFile" type="file" accept=".xlsx,.xls" aria-label="Selecionar arquivo Excel"
+                style="max-width:260px;flex:0 1 260px">
+            <input id="search" type="search" placeholder="Buscar instrumento, voz ou naipe..." aria-label="Buscar">
+            <select id="filterNaipe" aria-label="Filtrar por naipe">
+                <option value="">Todos os naipes</option>
+            </select>
+            <select id="filterStatus" aria-label="Filtrar por situação">
+                <option value="">Todas as situações</option>
+                <option value="ideal">Ideal</option>
+                <option value="need">Necessidade</option>
+                <option value="excess">Excesso</option>
+                <option value="neutral">Não aceito / não comporta</option>
+            </select>
+            <span class="result-count" id="resultCount"></span>
+        </section>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Naipe</th>
+                        <th>Instrumento</th>
+                        <th>Voz</th>
+                        <th>GEM</th>
+                        <th>Ensaio</th>
+                        <th>RJM</th>
+                        <th>RJM / Ensaio</th>
+                        <th>Culto oficial</th>
+                        <th>Oficializados</th>
+                        <th>Total atual</th>
+                        <th>Total ideal</th>
+                        <th>Adequação</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody"></tbody>
+            </table>
+            <div class="empty" id="empty" hidden>Nenhum instrumento encontrado para os filtros selecionados.</div>
+        </div>
+        <div class="footer"><span>Relatório de equilíbrio orquestral • Dados apresentados conforme a tabela de
+                origem.</span><span id="footerCount"></span></div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <script src="js/equilibrio.js"></script>
+</body>
+
+</html>
