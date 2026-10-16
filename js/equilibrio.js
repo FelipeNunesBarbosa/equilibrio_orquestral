@@ -25,7 +25,7 @@ function renderNaipes() {
         return `<article class="naip-card">
    <div class="naip-head"><span>${esc(name)}</span><span class="naip-count">${list.length} ${list.length === 1 ? "instrumento" : "instrumentos"}</span></div>
    <div class="naip-participation">
-    <div class="naip-participation-top"><div class="naip-musicians"><strong>${musicians.toLocaleString("pt-BR")}</strong> músicos atuais</div><div class="naip-percent">${percentageText}%</div></div>
+    <div class="naip-participation-top"><div class="naip-musicians"><strong>${musicians.toLocaleString("pt-BR")}</strong> Músicos</div><div class="naip-percent">${percentageText}%</div></div>
     <div class="share-track" role="img" aria-label="${percentageText}% do total atual de músicos"><div class="share-fill" style="width:${Math.min(100, percentage)}%"></div></div>
     <div class="share-caption">Participação no total da orquestra (${totalMusicians.toLocaleString("pt-BR")} músicos)</div>
    </div>
