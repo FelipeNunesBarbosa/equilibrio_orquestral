@@ -41,16 +41,8 @@
             <input id="excelFile" type="file" accept=".xlsx,.xls" aria-label="Selecionar arquivo Excel"
                 style="max-width:260px;flex:0 1 260px">
             <input id="search" type="search" placeholder="Buscar instrumento, voz ou naipe..." aria-label="Buscar">
-            <select id="filterNaipe" aria-label="Filtrar por naipe">
-                <option value="">Todos os naipes</option>
-            </select>
-            <select id="filterStatus" aria-label="Filtrar por situação">
-                <option value="">Todas as situações</option>
-                <option value="ideal">Ideal</option>
-                <option value="need">Necessidade</option>
-                <option value="excess">Excesso</option>
-                <option value="neutral">Não aceito / não comporta</option>
-            </select>
+            <div id="filterNaipe" class="multi-filter" aria-label="Filtrar por naipe"></div>
+            <div id="filterStatus" class="multi-filter" aria-label="Filtrar por adequação"></div>
             <span class="result-count" id="resultCount"></span>
         </section>
         <div class="table-wrap">
