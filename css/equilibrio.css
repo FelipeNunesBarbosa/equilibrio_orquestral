@@ -633,3 +633,18 @@ tbody tr:last-child td {
         page-break-inside: avoid
     }
 }
+
+/* Filtros com seleção múltipla */
+.multi-filter { position: relative; min-width: 190px; font: inherit; }
+.multi-filter-button { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 14px; border: 1px solid #d4dee7; border-radius: 8px; padding: 10px 12px; background: #fff; color: var(--ink); font: inherit; text-align: left; min-height: 40px; }
+.multi-filter.open .multi-filter-button { border-color: var(--blue); box-shadow: 0 0 0 2px #1769aa18; }
+.multi-filter .chevron { color: var(--muted); }
+.multi-filter-menu { position: absolute; z-index: 20; top: calc(100% + 5px); left: 0; width: max(100%, 240px); max-height: 280px; overflow: auto; padding: 7px; background: #fff; border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 8px 24px #20354a20; }
+.multi-filter-menu[hidden] { display: none; }
+.multi-filter-clear { display: block; width: 100%; border: 0; background: #f3f6fa; color: var(--navy); padding: 8px 10px; margin-bottom: 5px; text-align: left; font-size: 12px; }
+.multi-filter-option { display: flex; justify-content: flex-start; text-align: left; align-items: center; gap: 9px; padding: 8px 9px; border-radius: 6px; cursor: pointer; font-size: 12px; }
+.multi-filter-option:hover { background: #f3f7fb; }
+.controls .multi-filter-option input[type="checkbox"] { flex: 0 0 14px; width: 14px; min-width: 14px; height: 14px; min-height: 0; padding: 0; margin: 0; accent-color: var(--blue); }
+.overview-empty { grid-column: 1 / -1; padding: 22px; color: var(--muted); text-align: center; background: white; border: 1px dashed var(--line); border-radius: 12px; }
+@media print { .multi-filter-menu { display: none !important; } }
+
